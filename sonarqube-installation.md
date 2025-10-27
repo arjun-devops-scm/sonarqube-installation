@@ -61,6 +61,7 @@ sudo systemctl status postgresql-15
 
 sudo vi /var/lib/pgsql/15/data/pg_hba.conf
 Find these lines and make them look like this:
+```
 
 # "local" is for Unix domain socket connections only
 local   all             all                                     trust
@@ -68,6 +69,8 @@ local   all             all                                     trust
 host    all             all             127.0.0.1/32            trust
 # IPv6 local connections:
 host    all             all             ::1/128                 trust
+
+```
 
 ```
 sudo systemctl restart postgresql-15
