@@ -17,7 +17,7 @@ sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/15/data
 
 sudo vi /etc/systemd/system/postgresql-15.service
 -------------------------------------------------
-
+```
 
 [Unit]
 Description=PostgreSQL 15 database server
@@ -33,6 +33,8 @@ PIDFile=/var/lib/pgsql/15/data/postmaster.pid
 
 [Install]
 WantedBy=multi-user.target
+
+```
 
 -------------------------------------
 
