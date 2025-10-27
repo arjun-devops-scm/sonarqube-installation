@@ -36,13 +36,16 @@ WantedBy=multi-user.target
 
 ```
 
--------------------------------------
+
+# run below commands 
+```
 
 sudo systemctl daemon-reload
 sudo systemctl enable postgresql-15
 sudo systemctl start postgresql-15
 sudo systemctl status postgresql-15
------------------------------------------
+```
+
 
 sudo vi /var/lib/pgsql/15/data/pg_hba.conf
 Find these lines and make them look like this:
