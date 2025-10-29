@@ -25,8 +25,8 @@ sudo chown -R postgres:postgres /var/lib/pgsql
 
 sudo -u postgres /usr/bin/initdb -D /var/lib/pgsql/15/data
 ```
-
-
+sudo systemctl status postgresql-15
+```
 sudo vi /etc/systemd/system/postgresql-15.service
 -------------------------------------------------
 ```
