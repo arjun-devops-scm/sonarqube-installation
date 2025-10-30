@@ -158,6 +158,38 @@ tail -n 50 /opt/sonarqube/logs/web.log
 
 ```
 
+## If issue is related to database permission issue we need to execute below commands
+
+```
+sudo -iu postgres
+
+```
+
+```
+psql
+ 
+```
+
+```
+\c sonarqube;
+
+```
+
+```
+ALTER DATABASE sonarqube OWNER TO sonar;
+
+-- Step 3: change ownership of the public schema
+ALTER SCHEMA public OWNER TO sonar;
+
+GRANT ALL PRIVILEGES ON DATABASE sonarqube TO sonar;
+
+-- Step 5: grant privileges on schema objects
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO sonar;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO sonar;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO sonar;
+
+```
+
 
 
 
